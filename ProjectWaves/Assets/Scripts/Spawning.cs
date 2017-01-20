@@ -27,7 +27,8 @@ public class Spawning : MonoBehaviour
             //spawn here
             Debug.Log("Spawn");
             SpawnedtestObj = Instantiate(testObj) as GameObject;
-            SpawnedtestObj.transform.position = new Vector2(Random.Range(-8.0f, 8.0f), 12.0f);
+            //SpawnedtestObj.transform.position = new Vector2(Random.Range(-8.0f, 8.0f), 12.0f);
+            SpawnedtestObj.transform.position = new Vector3(Random.Range(10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
             Timer = Random.Range(TimerMin, TimerMax);
         }
 
