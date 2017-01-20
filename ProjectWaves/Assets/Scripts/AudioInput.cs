@@ -9,7 +9,7 @@ public class AudioInput : MonoBehaviour {
 
     private string _device;
     private AudioClip _clipRecord = new AudioClip();
-    private int _sampleWindow = 128;
+    private int _sampleWindow = 12;
 
     private bool _isInit = false;
 
@@ -21,7 +21,7 @@ public class AudioInput : MonoBehaviour {
     void InitMic()
     {
         if (_device == null) _device = Microphone.devices[0];
-        _clipRecord = Microphone.Start(_device, true, 999, 44100);
+        _clipRecord = Microphone.Start(_device, true, 999, 1000);
         _isInit = true;
     }
 
@@ -39,19 +39,21 @@ public class AudioInput : MonoBehaviour {
         if (micPosition < 0) return 0;
         _clipRecord.GetData(waveData, micPosition);
         // getting the max from the last 128 samples
+        float waveSum = 0;
         for (int i = 0; i < _sampleWindow; i++)
         {
             float wavePeak = waveData[i] * waveData[i];
-            if (levelMax < wavePeak)
-                levelMax = wavePeak;
+            /*if (levelMax < wavePeak)
+                levelMax = wavePeak;*/
+            waveSum += wavePeak;
         }
-        return levelMax;
+        return waveSum / (float)_sampleWindow;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         MicVolume = LevelMax();
-        Debug.Log(MicVolume * 10000);
+        Debug.Log(MicVolume * 1000);
     }
 
     private void Start()
