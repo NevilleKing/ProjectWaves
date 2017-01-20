@@ -14,7 +14,7 @@ public class Flapper : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        impulse = Input.GetAxis("Vertical");
+        impulse = AudioInput.MicVolume * 6;
         rb.AddForce(transform.up * impulse * multiply);
         rb.AddForce(transform.forward * impulse * multiply);
     }
