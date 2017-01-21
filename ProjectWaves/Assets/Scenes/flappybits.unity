@@ -300,7 +300,7 @@ MonoBehaviour:
     type: 2}
   spawnRate: 0.1
   countDownToSpawn: 0
-  _destroyPosition: 50
+  _destroyPosition: 60
 --- !u!54 &359319611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -688,13 +688,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1161943981}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -9.2, y: 4.5, z: 14.4}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalRotation: {x: 0.034276392, y: -0.7062755, z: 0.034276392, w: 0.7062755}
+  m_LocalPosition: {x: -22.2, y: 4.5, z: 21.7}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.5569, y: -90, z: 0}
 --- !u!1 &1235339764 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100008, guid: 32c9a1265c9772c448eaeca71c43d6f1, type: 3}
