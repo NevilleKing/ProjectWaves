@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349048bf47afdcf4c8bb3633507c18e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingToSpawn: {fileID: 1103013575202922, guid: 1672ca4cc82e13b4587ba01b8ea3999e,
+  thingToSpawn: {fileID: 1761313400622528, guid: 06daf33f3d0a1f3499a01d159d471c93,
     type: 2}
   spawnRate: 5
   countDownToSpawn: 0
