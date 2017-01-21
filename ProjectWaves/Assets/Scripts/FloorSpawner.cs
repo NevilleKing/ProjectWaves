@@ -33,6 +33,8 @@ public class FloorSpawner : MonoBehaviour {
                 LineRenderer lastLR = previousLine.GetComponent<LineRenderer>();
                 Vector3[] positions = { new Vector3(0f, gameObject.transform.position.y, gameObject.transform.position.z), new Vector3(0f, lastLR.GetPosition(0).y, previousLine.transform.position.z) };
                 lr.SetPositions(positions);
+                SphereCollider sc = x.GetComponent<SphereCollider>();
+                sc.center = positions[0];
             }
             x.GetComponent<FloorMover>().destroyPosition = destroyPosition;
             previousLine = x;
