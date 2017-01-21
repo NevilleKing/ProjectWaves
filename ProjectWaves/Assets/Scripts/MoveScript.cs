@@ -8,20 +8,21 @@ public class MoveScript : MonoBehaviour
 	
 	/// Object speed
 
-	public Vector2 speed = new Vector2(10, 10);
+	public Vector3 speed = new Vector3(10, 10, 10);
 
 	/// Moving direction
 
-	public Vector2 direction = new Vector2(0, 1);
+	public Vector3 direction = new Vector3(0, 0, -1);
 	
-	private Vector2 movement;
+	private Vector3 movement;
 	
 	void Update()
 	{
 		//Movement
-		movement = new Vector2(
+		movement = new Vector3(
 			speed.x * direction.x,
-			speed.y * direction.y);
+			speed.y * direction.y,
+            speed.z * direction.z);
 	}
 	
 	void FixedUpdate()
