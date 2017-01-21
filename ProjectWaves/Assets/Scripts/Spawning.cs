@@ -26,7 +26,6 @@ public class Spawning : MonoBehaviour
     void Update()
     {
         Timer--;
-        //Debug.Log (Timer);
         if (Timer <= 0)
         {
             //spawn here
