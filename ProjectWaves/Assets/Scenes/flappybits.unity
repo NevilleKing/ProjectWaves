@@ -318,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thingToSpawn: {fileID: 1761313400622528, guid: 06daf33f3d0a1f3499a01d159d471c93,
     type: 2}
-  spawnRate: 5
+  spawnRate: 0.1
   countDownToSpawn: 0
   _destroyPosition: 70
 --- !u!1 &953637461 stripped
