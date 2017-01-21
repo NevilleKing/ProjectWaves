@@ -48,10 +48,8 @@ public class Spawning : MonoBehaviour
         }
 
 
-
-
         elapsed = Time.time - start_time;
-        if (elapsed >= TimerValue) //after 10 seconds
+        if (elapsed >= TimerValue && elapsed <= 100) //after 10 seconds and up to 100 seconds
          {
             Debug.Log("Timer");
             speed += 0.5f;
