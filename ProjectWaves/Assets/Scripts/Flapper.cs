@@ -15,6 +15,10 @@ public class Flapper : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         impulse = AudioInput.MicVolume * 6;
+        if (impulse > 0.8f)
+        {
+            impulse = 0.8f;
+        }
         rb.AddForce(transform.up * impulse * multiply);
         rb.AddForce(transform.forward * impulse * multiply);
     }
