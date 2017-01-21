@@ -33,7 +33,7 @@ public class Spawning : MonoBehaviour
             //spawn here
             Debug.Log("Spawn Collectable");
             SpawnedCollectable = Instantiate(Collectable) as GameObject;
-            SpawnedCollectable.transform.position = new Vector3(0, Random.Range(-2.0f, 18.0f), Random.Range(77.0f, 77.0f));
+            SpawnedCollectable.transform.position = new Vector3(0, Random.Range(-2.0f, 9.0f), FloorSpawner.destroyPosition);
             SpawnedCollectable.GetComponent<MoveScript>().speed = new Vector3(0, 0, speed);
             Timer1 = Random.Range(TimerMin, TimerMax);
         }
@@ -42,16 +42,14 @@ public class Spawning : MonoBehaviour
             //spawn here
             Debug.Log("Spawn Destructable");
             SpawnedDestructable = Instantiate(Destructable) as GameObject;
-            SpawnedDestructable.transform.position = new Vector3(0, Random.Range(-2.0f, 18.0f), Random.Range(77.0f, 77.0f));
+            SpawnedDestructable.transform.position = new Vector3(0, Random.Range(-2.0f, 9.0f), FloorSpawner.destroyPosition);
             SpawnedDestructable.GetComponent<MoveScript>().speed = new Vector3(0, 0, speed);
             Timer2 = Random.Range(TimerMin1, TimerMax1);
         }
 
 
-
-
         elapsed = Time.time - start_time;
-        if (elapsed >= TimerValue) //after 10 seconds
+        if (elapsed >= TimerValue && elapsed <= 100) //after 10 seconds and up to 100 seconds
          {
             Debug.Log("Timer");
             speed += 0.5f;

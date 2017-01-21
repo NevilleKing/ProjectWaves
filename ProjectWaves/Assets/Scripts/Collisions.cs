@@ -5,6 +5,8 @@ using UnityEngine;
 public class Collisions : MonoBehaviour {
 
     protected int score;
+    public int Health = 100;
+
     // Use this for initialization
     void Start () {
 		
@@ -12,7 +14,10 @@ public class Collisions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Health <= 0) {
+            Debug.Log("GAME OVER!");
+        }
+            
 	}
 
     void OnCollisionEnter(Collision col) {
@@ -28,7 +33,13 @@ public class Collisions : MonoBehaviour {
             //player collides and destroys destructable
             Destroy(col.gameObject);
             Debug.Log("Damage Hit!");
+            Health -= 10;
         }
 
+    }
+
+    void OnGUI() {
+        GUI.Label(new Rect(10, 5, 100, 50), "Score: " + score);
+        GUI.Label(new Rect(10, 25, 100, 50), "Health: " + Health);
     }
 }
