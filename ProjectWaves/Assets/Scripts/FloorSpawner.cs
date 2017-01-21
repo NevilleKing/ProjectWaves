@@ -12,6 +12,8 @@ public class FloorSpawner : MonoBehaviour {
 
     // Use this for initialization
 
+    private GameObject previousLine;
+
     private void Start()
     {
         destroyPosition = transform.position.z + _destroyPosition;
@@ -24,8 +26,16 @@ public class FloorSpawner : MonoBehaviour {
         if ( countDownToSpawn < 0.0f)
         {
             GameObject x = Instantiate(thingToSpawn);
-            x.transform.position = new Vector3(0f,gameObject.transform.position.y, gameObject.transform.position.z);
+            x.transform.position = new Vector3(0f,0f, gameObject.transform.position.z);
+            if (previousLine != null)
+            {
+                LineRenderer lr = x.GetComponent<LineRenderer>();
+                LineRenderer lastLR = previousLine.GetComponent<LineRenderer>();
+                Vector3[] positions = { new Vector3(0f, gameObject.transform.position.y, gameObject.transform.position.z), new Vector3(transform.position.x, lastLR.GetPosition(0).y, previousLine.transform.position.z) };
+                lr.SetPositions(positions);
+            }
             x.GetComponent<FloorMover>().destroyPosition = destroyPosition;
+            previousLine = x;
             countDownToSpawn = spawnRate;
         }
        
