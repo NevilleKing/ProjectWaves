@@ -20,7 +20,7 @@ public class ManMover : MonoBehaviour {
 	void FixedUpdate () {
         //Debug.DrawLine(start.transform.position, new Vector3(0, -40, 40), Color.red);
         Ray ray = new Ray (start.transform.position, dwn);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit) && hit.collider.tag == "Wave")
         {
             Debug.DrawLine(start.transform.position, hit.point, Color.red);
             rb.transform.position = hit.point;
