@@ -574,8 +574,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collectable: {fileID: 1305602545134892, guid: 62ffacf54a19e7c49af1a4b66d429fcf,
     type: 2}
+  Destructable: {fileID: 1438708386389752, guid: e326cd29bd3022d4cb91f03185499349,
+    type: 2}
   TimerMin: 200
   TimerMax: 200
+  TimerMin1: 150
+  TimerMax1: 150
   TimerValue: 10
   start_time: 0
   elapsed: 0
@@ -644,6 +648,7 @@ GameObject:
   - component: {fileID: 1635853509}
   - component: {fileID: 1635853513}
   - component: {fileID: 1635853514}
+  - component: {fileID: 1635853515}
   m_Layer: 2
   m_Name: Capsule
   m_TagString: Untagged
@@ -689,7 +694,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1635853508}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -728,7 +733,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 90
   m_CollisionDetection: 0
 --- !u!114 &1635853514
 MonoBehaviour:
@@ -742,6 +747,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 1659130624}
+--- !u!114 &1635853515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635853508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757b6a62ae475494c8f4d4a8d2f7f834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1659130624
 GameObject:
   m_ObjectHideFlags: 0
