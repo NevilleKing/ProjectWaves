@@ -33,7 +33,7 @@ public class Collisions : MonoBehaviour {
             //player collides and destroys destructable
             Destroy(col.gameObject);
             Debug.Log("Damage Hit!");
-            Health -= 20;
+            Health -= 10;
         }
 
     }
