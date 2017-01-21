@@ -7,6 +7,8 @@ public class FloorSpawner : MonoBehaviour {
     public float spawnRate = 5.0f;
     public float countDownToSpawn;
 
+    public float destroyPosition;
+
     // Use this for initialization
 
 
@@ -18,6 +20,7 @@ public class FloorSpawner : MonoBehaviour {
         {
             GameObject x = Instantiate(thingToSpawn);
             x.transform.position = new Vector3(0f,gameObject.transform.position.y, gameObject.transform.position.z);
+            x.GetComponent<FloorMover>().destroyPosition = destroyPosition;
             countDownToSpawn = spawnRate;
         }
        
