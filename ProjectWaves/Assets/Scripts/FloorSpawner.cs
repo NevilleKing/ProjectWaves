@@ -7,10 +7,15 @@ public class FloorSpawner : MonoBehaviour {
     public float spawnRate = 5.0f;
     public float countDownToSpawn;
 
-    public float destroyPosition;
+    public static float destroyPosition;
+    public float _destroyPosition;
 
     // Use this for initialization
 
+    private void Start()
+    {
+        destroyPosition = transform.position.z + _destroyPosition;
+    }
 
     void Update () {
 

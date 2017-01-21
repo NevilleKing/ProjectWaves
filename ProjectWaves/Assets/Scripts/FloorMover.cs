@@ -10,8 +10,6 @@ public class FloorMover : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         Destroy(gameObject, lifetime);
-
-        destroyPosition = transform.position.z + destroyPosition;
     }
 
     void FixedUpdate () {

@@ -32,7 +32,7 @@ public class Spawning : MonoBehaviour
             //spawn here
             Debug.Log("Spawn");
             SpawnedCollectable = Instantiate(Collectable) as GameObject;
-            SpawnedCollectable.transform.position = new Vector3(0, Random.Range(-10.0f, 10.0f), Random.Range(77.0f, 77.0f));
+            SpawnedCollectable.transform.position = new Vector3(0, Random.Range(-10.0f, 10.0f), FloorSpawner.destroyPosition);
             SpawnedCollectable.GetComponent<MoveScript>().speed = new Vector3(0, 0, speed);
             Timer = Random.Range(TimerMin, TimerMax);
 

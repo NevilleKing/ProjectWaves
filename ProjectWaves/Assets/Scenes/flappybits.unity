@@ -320,6 +320,7 @@ MonoBehaviour:
     type: 2}
   spawnRate: 5
   countDownToSpawn: 0
+  _destroyPosition: 20
 --- !u!1 &953637461 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100004, guid: 32c9a1265c9772c448eaeca71c43d6f1, type: 3}
@@ -553,8 +554,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1512634038}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.70710677, z: -0.000000029802319, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
