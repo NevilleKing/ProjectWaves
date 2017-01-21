@@ -320,7 +320,7 @@ MonoBehaviour:
     type: 2}
   spawnRate: 5
   countDownToSpawn: 0
-  _destroyPosition: 20
+  _destroyPosition: 70
 --- !u!1 &953637461 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100004, guid: 32c9a1265c9772c448eaeca71c43d6f1, type: 3}
