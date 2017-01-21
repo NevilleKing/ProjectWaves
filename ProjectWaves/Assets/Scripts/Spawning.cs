@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class Spawning : MonoBehaviour
 {
-    public GameObject testObj;
-    GameObject SpawnedtestObj;
+    public GameObject Collectable;
+    GameObject SpawnedCollectable;
     public float TimerMin;
     public float TimerMax;
+    public float TimerValue = 10.0f;
     float Timer;
+    public float start_time;
+    public float elapsed;
+    public float speed = 5.0f;
 
     void Start()
     {
         Timer = Random.Range(TimerMin, TimerMax);
+        start_time = 1000 * Time.time;
 
     }
 
@@ -26,11 +31,19 @@ public class Spawning : MonoBehaviour
         {
             //spawn here
             Debug.Log("Spawn");
-            SpawnedtestObj = Instantiate(testObj) as GameObject;
-            //SpawnedtestObj.transform.position = new Vector2(Random.Range(-8.0f, 8.0f), 12.0f);
-            SpawnedtestObj.transform.position = new Vector3(Random.Range(10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
+            SpawnedCollectable = Instantiate(Collectable) as GameObject;
+            SpawnedCollectable.transform.position = new Vector3(Random.Range(10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
+            SpawnedCollectable.GetComponent<MoveScript>().speed = new Vector2(speed, 0);
             Timer = Random.Range(TimerMin, TimerMax);
-        }
 
+                                       
+        }
+        elapsed = Time.time - start_time; 
+        if (elapsed >= TimerValue) //after 10 seconds
+         {
+            Debug.Log("Timer");
+            speed += 0.5f;
+            TimerValue += 10.0f;
+         }
     }
 }

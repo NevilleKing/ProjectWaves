@@ -118,7 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43058a054082ef743b6efa145cbafa41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testObj: {fileID: 1305602545134892, guid: 62ffacf54a19e7c49af1a4b66d429fcf, type: 2}
+  Collectable: {fileID: 1305602545134892, guid: 62ffacf54a19e7c49af1a4b66d429fcf,
+    type: 2}
   TimerMin: 200
   TimerMax: 200
 --- !u!4 &333282161
