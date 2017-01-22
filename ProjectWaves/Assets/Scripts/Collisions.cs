@@ -6,7 +6,7 @@ public class Collisions : MonoBehaviour {
 
     public static int score;
 
-    public static int Health = 100;
+    public static int Health = 10;
     public Transform Star;
     public Transform Enemy;
   
@@ -15,14 +15,13 @@ public class Collisions : MonoBehaviour {
     AudioSource audioSource;
 
     public AudioClip[] audio;
+    public AudioClip[] endSounds;
 
 
     
     // Use this for initialization
     void Start () {
         audioSource = GetComponent<AudioSource>();
-
-        //audioSource.clip = audio;
     }
 	
 	// Update is called once per frame
@@ -34,6 +33,8 @@ public class Collisions : MonoBehaviour {
             anim.SetTrigger("PlayerDead");
             PlayerPrefs.SetInt("currentScore", score);
             PlayerPrefs.Save();
+            audioSource.clip = endSounds[Random.Range(0, endSounds.Length)];
+            audioSource.Play();
         }
             
 	}
@@ -53,7 +54,8 @@ public class Collisions : MonoBehaviour {
             if (col.gameObject.tag == "Collectable")
             {
                 //player collides and destroys collectable adding +10 score
-                Star = Instantiate(Star, transform.position, Quaternion.identity) as Transform;
+                Transform newStar = Instantiate(Star, transform.position, Quaternion.identity) as Transform;
+                Destroy(newStar.gameObject, 5.0f);
                 Destroy(col.gameObject);
                 increaseScore(10);
                 Debug.Log("Collect");
@@ -61,7 +63,8 @@ public class Collisions : MonoBehaviour {
             else if (col.gameObject.tag == "Destructable")
             {
                 //player collides and destroys destructable
-                Enemy = Instantiate(Enemy, transform.position, Quaternion.identity) as Transform;
+                Transform newEnemy = Instantiate(Enemy, transform.position, Quaternion.identity) as Transform;
+                Destroy(newEnemy.gameObject, 5.0f);
                 Destroy(col.gameObject);
                 Debug.Log("Damage Hit!");
                 Health -= 10;
