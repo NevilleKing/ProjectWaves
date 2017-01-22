@@ -16,6 +16,7 @@ public class Collisions : MonoBehaviour {
 
     public AudioClip[] audio;
     public AudioClip[] endSounds;
+    public AudioClip collectSound;
 
 
     
@@ -59,6 +60,8 @@ public class Collisions : MonoBehaviour {
                 Destroy(col.gameObject);
                 increaseScore(10);
                 Debug.Log("Collect");
+                audioSource.clip = collectSound;
+                audioSource.Play();
             }
             else if (col.gameObject.tag == "Destructable")
             {
