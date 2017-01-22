@@ -21,6 +21,7 @@ public class StartScript : MonoBehaviour
             Warning.transform.SetParent(GameObject.Find("Canvas").transform);
             Warning.transform.localPosition = position;
             Destroy(Warning, 5.0f);
+            //hide.SetActive(false);
         }
         else
         {
