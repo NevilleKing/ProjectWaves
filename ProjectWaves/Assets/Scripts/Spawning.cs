@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Spawning : MonoBehaviour
 {
+
     public GameObject Collectable;
     public GameObject Destructable;
     GameObject SpawnedCollectable;
@@ -14,14 +15,13 @@ public class Spawning : MonoBehaviour
     float Timer1, Timer2;
     public float start_time;
     public float elapsed;
-    public float speed = 5.0f;
+    public float speed = 4.0f;
 
     void Start()
     {
         Timer1 = Random.Range(TimerMin, TimerMax);
         Timer2 = Random.Range(TimerMin1, TimerMax1);
         start_time = 1000 * Time.time;
-
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class Spawning : MonoBehaviour
             Timer1 = Random.Range(TimerMin, TimerMax);
         }
         Timer2--;
-        if (Timer2 <= 0) {
+        if (Timer2 <= 0 && Collisions.score > 20) {
             //spawn here
             Debug.Log("Spawn Destructable");
             SpawnedDestructable = Instantiate(Destructable) as GameObject;
@@ -49,7 +49,7 @@ public class Spawning : MonoBehaviour
 
 
         elapsed = Time.time - start_time;
-        if (elapsed >= TimerValue && elapsed <= 100) //after 10 seconds and up to 100 seconds
+        if (Collisions.score <= 150 && elapsed >= TimerValue) //after 10 seconds and up to 100 seconds
          {
             Debug.Log("Timer");
             speed += 0.5f;
@@ -58,6 +58,6 @@ public class Spawning : MonoBehaviour
             TimerMin1 -= 5.0f;
             TimerMax1 -= 5.0f;
             TimerValue += 10.0f;
-         }
+        }
     }
 }

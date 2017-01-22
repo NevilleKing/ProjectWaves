@@ -790,10 +790,10 @@ MonoBehaviour:
     type: 2}
   Destructable: {fileID: 1438708386389752, guid: e326cd29bd3022d4cb91f03185499349,
     type: 2}
-  TimerMin: 150
-  TimerMax: 150
-  TimerMin1: 100
-  TimerMax1: 100
+  TimerMin: 200
+  TimerMax: 200
+  TimerMin1: 300
+  TimerMax1: 300
   TimerValue: 10
   start_time: 0
   elapsed: 0
@@ -973,7 +973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757b6a62ae475494c8f4d4a8d2f7f834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
 --- !u!1 &1659130624
 GameObject:
   m_ObjectHideFlags: 0
