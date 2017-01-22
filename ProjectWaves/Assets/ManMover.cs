@@ -23,7 +23,7 @@ public class ManMover : MonoBehaviour {
         if (Physics.Raycast(ray, out hit) && hit.collider.tag == "Wave")
         {
             Debug.DrawLine(start.transform.position, hit.point, Color.red);
-            rb.transform.position = hit.point;
+            rb.transform.position = hit.point + new Vector3(0, 0.15f, 0);
         }
 
     }
