@@ -295,7 +295,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 913957027}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1985202481}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &913957027
@@ -3962,6 +3973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ac19c21af14684883dde97ca187374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warningMessage: {fileID: 1359135825918016, guid: 44f762646d02eee41b875629a1d14428,
+    type: 2}
 --- !u!1 &2033734673
 GameObject:
   m_ObjectHideFlags: 0
