@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Collisions : MonoBehaviour {
 
-    protected int score;
-    public int Health = 100;
+    public static int score;
+    public static int Health = 100;
 
     // Use this for initialization
     void Start () {
@@ -20,13 +20,18 @@ public class Collisions : MonoBehaviour {
             
 	}
 
+    public static void increaseScore(int scoreIncrease)
+    {
+        score += scoreIncrease;
+    }
+
     void OnCollisionEnter(Collision col) {
         //Check collision name
         Debug.Log("collision name = " + col.gameObject.name);
         if (col.gameObject.tag == "Collectable") {
             //player collides and destroys collectable adding +10 score
             Destroy(col.gameObject);
-            score += 10;
+            increaseScore(10);
             Debug.Log("Collect");
         }
        else if (col.gameObject.tag == "Destructable") {
