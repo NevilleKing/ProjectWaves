@@ -7,7 +7,7 @@ public class Collisions : MonoBehaviour {
 
     public static int score;
 
-    public static int Health = 10;
+    public static int Health = 100;
     public Transform Star;
     public Transform Enemy;
   
