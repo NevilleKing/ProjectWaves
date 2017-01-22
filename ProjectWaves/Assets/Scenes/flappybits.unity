@@ -327,7 +327,7 @@ MonoBehaviour:
     type: 2}
   spawnRate: 0.1
   countDownToSpawn: 0
-  _destroyPosition: 50
+  _destroyPosition: 60
 --- !u!54 &359319611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -715,13 +715,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1161943981}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -9.2, y: 4.5, z: 14.4}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalRotation: {x: 0.034276392, y: -0.7062755, z: 0.034276392, w: 0.7062755}
+  m_LocalPosition: {x: -22.2, y: 4.5, z: 21.7}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.5569, y: -90, z: 0}
 --- !u!1 &1235339764 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100008, guid: 32c9a1265c9772c448eaeca71c43d6f1, type: 3}
@@ -1089,6 +1089,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1904337438}
   - component: {fileID: 1904337439}
+  - component: {fileID: 1904337441}
+  - component: {fileID: 1904337440}
   m_Layer: 0
   m_Name: ned
   m_TagString: Untagged
@@ -1144,3 +1146,34 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!95 &1904337440
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904337437}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b041998a67d12443afff60a27f28569, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &1904337441
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904337437}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
