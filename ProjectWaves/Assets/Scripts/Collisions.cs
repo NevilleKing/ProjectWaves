@@ -21,6 +21,8 @@ public class Collisions : MonoBehaviour {
             Debug.Log("GAME OVER!");
             Animator anim = GameObject.Find("eyes").GetComponent<Animator>();
             anim.SetTrigger("PlayerDead");
+            PlayerPrefs.SetInt("currentScore", score);
+            PlayerPrefs.Save();
         }
             
 	}
