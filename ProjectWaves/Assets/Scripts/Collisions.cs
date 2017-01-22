@@ -6,6 +6,7 @@ public class Collisions : MonoBehaviour {
 
     public static int score;
     public static int Health = 100;
+    public Transform Explosion;
 
     // Use this for initialization
     void Start () {
@@ -30,6 +31,7 @@ public class Collisions : MonoBehaviour {
         Debug.Log("collision name = " + col.gameObject.name);
         if (col.gameObject.tag == "Collectable") {
             //player collides and destroys collectable adding +10 score
+            Explosion = Instantiate(Explosion, transform.position, Quaternion.identity) as Transform;
             Destroy(col.gameObject);
             increaseScore(10);
             Debug.Log("Collect");
