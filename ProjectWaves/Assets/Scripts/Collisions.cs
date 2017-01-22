@@ -9,13 +9,15 @@ public class Collisions : MonoBehaviour {
 
     AudioSource audioSource;
 
-    public AudioClip audio;
+    public AudioClip[] audio;
+
+
     
     // Use this for initialization
     void Start () {
         audioSource = GetComponent<AudioSource>();
 
-        audioSource.clip = audio;
+        //audioSource.clip = audio;
     }
 	
 	// Update is called once per frame
@@ -40,11 +42,13 @@ public class Collisions : MonoBehaviour {
             increaseScore(10);
             Debug.Log("Collect");
         }
-       else if (col.gameObject.tag == "Destructable") {
+        else if (col.gameObject.tag == "Destructable") {
             //player collides and destroys destructable
             Destroy(col.gameObject);
             Debug.Log("Damage Hit!");
             Health -= 10;
+
+            audioSource.clip = audio[Random.Range(0, audio.Length)];
             audioSource.Play();
         }
 
