@@ -7,10 +7,16 @@ public class Collisions : MonoBehaviour {
     public static int score;
     public static int Health = 100;
 
+    AudioSource audioSource;
+
+    public AudioClip audio;
+    
     // Use this for initialization
     void Start () {
-		
-	}
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.clip = audio;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,6 +45,7 @@ public class Collisions : MonoBehaviour {
             Destroy(col.gameObject);
             Debug.Log("Damage Hit!");
             Health -= 10;
+            audioSource.Play();
         }
 
     }
