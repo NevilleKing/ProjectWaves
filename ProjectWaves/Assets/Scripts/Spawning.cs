@@ -33,7 +33,7 @@ public class Spawning : MonoBehaviour
             //spawn here
             Debug.Log("Spawn Collectable");
             SpawnedCollectable = Instantiate(Collectable) as GameObject;
-            SpawnedCollectable.transform.position = new Vector3(0, Random.Range(-2.0f, 9.0f), FloorSpawner.destroyPosition);
+            SpawnedCollectable.transform.position = new Vector3(0, Random.Range(-2.0f, 8.0f), FloorSpawner.destroyPosition);
             SpawnedCollectable.GetComponent<MoveScript>().speed = new Vector3(0, 0, speed);
             Timer1 = Random.Range(TimerMin, TimerMax);
         }
@@ -42,7 +42,7 @@ public class Spawning : MonoBehaviour
             //spawn here
             Debug.Log("Spawn Destructable");
             SpawnedDestructable = Instantiate(Destructable) as GameObject;
-            SpawnedDestructable.transform.position = new Vector3(0, Random.Range(-2.0f, 9.0f), FloorSpawner.destroyPosition);
+            SpawnedDestructable.transform.position = new Vector3(0, Random.Range(-2.0f, 8.0f), FloorSpawner.destroyPosition);
             SpawnedDestructable.GetComponent<MoveScript>().speed = new Vector3(0, 0, speed);
             Timer2 = Random.Range(TimerMin1, TimerMax1);
         }

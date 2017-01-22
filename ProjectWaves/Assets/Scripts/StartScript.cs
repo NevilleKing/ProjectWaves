@@ -8,6 +8,9 @@ public class StartScript : MonoBehaviour
 
     public GameObject warningMessage;
 
+    public GameObject show;
+    public GameObject hide;
+
     public void StartGame()
     {
         if (!AudioInput.checkMicrophone())
@@ -18,6 +21,7 @@ public class StartScript : MonoBehaviour
             Warning.transform.SetParent(GameObject.Find("Canvas").transform);
             Warning.transform.localPosition = position;
             Destroy(Warning, 5.0f);
+            //hide.SetActive(false);
         }
         else
         {
@@ -28,5 +32,22 @@ public class StartScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ShowAboutPanel()
+    {
+        hide.SetActive(false);
+        show.SetActive(true);
+    }
+
+    public void BackButton()
+    {
+        hide.SetActive(true);
+        show.SetActive(false);
+    }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(0);
     }
 }
