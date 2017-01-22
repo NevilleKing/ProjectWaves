@@ -8,6 +8,9 @@ public class StartScript : MonoBehaviour
 
     public GameObject warningMessage;
 
+    public GameObject show;
+    public GameObject hide;
+
     public void StartGame()
     {
         if (!AudioInput.checkMicrophone())
@@ -28,5 +31,17 @@ public class StartScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ShowAboutPanel()
+    {
+        hide.SetActive(false);
+        show.SetActive(true);
+    }
+
+    public void BackButton()
+    {
+        hide.SetActive(true);
+        show.SetActive(false);
     }
 }
