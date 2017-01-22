@@ -45,4 +45,9 @@ public class StartScript : MonoBehaviour
         hide.SetActive(true);
         show.SetActive(false);
     }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
