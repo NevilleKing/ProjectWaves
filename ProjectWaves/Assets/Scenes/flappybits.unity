@@ -849,6 +849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1450362869}
   - component: {fileID: 1450362870}
+  - component: {fileID: 1450362871}
   m_Layer: 0
   m_Name: eyes
   m_TagString: Untagged
@@ -888,6 +889,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1450362871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1450362868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d25be58e9a3964ca2969e10f393ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTexture: {fileID: 2800000, guid: fa87d1863487e714f8def315db25974d, type: 3}
+  fadeSpeed: 0.4
 --- !u!4 &1499374373 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400012, guid: 559aa1f27d4529d4c87449df6e9f1a6b, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collisions : MonoBehaviour {
 
     public static int score;
-    public static int Health = 100;
+    public static int Health = 10;
 
     bool playerDead = false;
 
