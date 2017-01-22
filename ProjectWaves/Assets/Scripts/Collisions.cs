@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Collisions : MonoBehaviour {
 
@@ -18,11 +19,14 @@ public class Collisions : MonoBehaviour {
     public AudioClip[] endSounds;
     public AudioClip collectSound;
 
+    private Text scoreText;
+    private Text healthText;
 
-    
     // Use this for initialization
     void Start () {
         audioSource = GetComponent<AudioSource>();
+        scoreText = GameObject.Find("scoreText").GetComponent<Text>();
+        healthText = GameObject.Find("healthText").GetComponent<Text>();
     }
 	
 	// Update is called once per frame
@@ -37,8 +41,10 @@ public class Collisions : MonoBehaviour {
             audioSource.clip = endSounds[Random.Range(0, endSounds.Length)];
             audioSource.Play();
         }
-            
-	}
+
+        scoreText.text = score.ToString();
+        healthText.text = Health.ToString();
+    }
 
     public static void increaseScore(int scoreIncrease)
     {
@@ -78,8 +84,4 @@ public class Collisions : MonoBehaviour {
         }
     }
 
-    void OnGUI() {
-        GUI.Label(new Rect(10, 5, 100, 50), "Score: " + score);
-        GUI.Label(new Rect(10, 25, 100, 50), "Health: " + Health);
-    }
 }
