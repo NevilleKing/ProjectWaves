@@ -49,7 +49,7 @@ public class Spawning : MonoBehaviour
 
 
         elapsed = Time.time - start_time;
-        if (Collisions.score <= 150 && elapsed >= TimerValue) //after 10 seconds and up to 100 seconds
+        if (Collisions.score <= 150 && elapsed >= TimerValue) //every 10 seconds and score reaches 150
          {
             Debug.Log("Timer");
             speed += 0.5f;

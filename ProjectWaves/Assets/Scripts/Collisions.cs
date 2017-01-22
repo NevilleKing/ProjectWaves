@@ -27,6 +27,8 @@ public class Collisions : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         scoreText = GameObject.Find("scoreText").GetComponent<Text>();
         healthText = GameObject.Find("healthText").GetComponent<Text>();
+        Health = 100;
+        score = 0;
     }
 	
 	// Update is called once per frame
@@ -76,7 +78,7 @@ public class Collisions : MonoBehaviour {
                 Destroy(newEnemy.gameObject, 5.0f);
                 Destroy(col.gameObject);
                 Debug.Log("Damage Hit!");
-                Health -= 10;
+                Health -= 20;
 
                 audioSource.clip = audio[Random.Range(0, audio.Length)];
                 audioSource.Play();
