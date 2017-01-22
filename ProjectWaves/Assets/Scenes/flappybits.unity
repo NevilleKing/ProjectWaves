@@ -1000,6 +1000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757b6a62ae475494c8f4d4a8d2f7f834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Star: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  Enemy: {fileID: 400010, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 2}
 --- !u!1 &1659130624
 GameObject:
   m_ObjectHideFlags: 0
