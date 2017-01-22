@@ -5,8 +5,11 @@ using UnityEngine;
 public class Collisions : MonoBehaviour {
 
     public static int score;
-    public static int Health = 10;
 
+    public static int Health = 100;
+    public Transform Star;
+    public Transform Enemy;
+  
     bool playerDead = false;
 
     // Use this for initialization
@@ -35,22 +38,22 @@ public class Collisions : MonoBehaviour {
     void OnCollisionEnter(Collision col) {
         if (!playerDead)
         {
-            //Check collision name
-            Debug.Log("collision name = " + col.gameObject.name);
-            if (col.gameObject.tag == "Collectable")
-            {
-                //player collides and destroys collectable adding +10 score
-                Destroy(col.gameObject);
-                increaseScore(10);
-                Debug.Log("Collect");
-            }
-            else if (col.gameObject.tag == "Destructable")
-            {
-                //player collides and destroys destructable
-                Destroy(col.gameObject);
-                Debug.Log("Damage Hit!");
-                Health -= 10;
-            }
+          //Check collision name
+          Debug.Log("collision name = " + col.gameObject.name);
+          if (col.gameObject.tag == "Collectable") {
+              //player collides and destroys collectable adding +10 score
+              Star = Instantiate(Star, transform.position, Quaternion.identity) as Transform;
+              Destroy(col.gameObject);
+              increaseScore(10);
+              Debug.Log("Collect");
+          }
+          else if (col.gameObject.tag == "Destructable") {
+              //player collides and destroys destructable
+              Enemy = Instantiate(Enemy, transform.position, Quaternion.identity) as Transform;
+              Destroy(col.gameObject);
+              Debug.Log("Damage Hit!");
+              Health -= 10;
+          }
         }
     }
 
