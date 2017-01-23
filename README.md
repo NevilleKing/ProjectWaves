@@ -8,6 +8,9 @@ The easiest way to play is to download the executable from our page on the [offi
 Please note there is an issue with the game over scene on some computers. If you experience this issue, clone this repo and open
 the game in the Unity Editor, running the Menu Scene. The game was built for Unity version 5.5.0.
 
+## Development
+Tongue Twister was created in Global Game Jam 2017 (January 20 - 22) by 4 students at the University of Lincoln. The theme was 'waves' and the game won the best technical prize at the Lincoln jam site.
+
 ## Credits
 - Neville King
 - David Gleed
